@@ -17,8 +17,9 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: '<your-resource-manager-connection>'
-    subscriptionId: '<your-subscription-id>'
+    azureResourceManagerConnection: 'Azure Sub - Resource Group 1'
+    subscriptionId: 'ddcb21c8-6540-4cc3-a842-f20522b6f2f6'
     action: 'DeleteRG'
-    resourceGroupName: 'ARMPipelinesLAMP-rg'
-    location: ''<your-closest-location>'
+    resourceGroupName: 'Resource_Group_1'
+    location: 'Australia East'
+    
