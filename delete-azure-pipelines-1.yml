@@ -1,0 +1,24 @@
+variables:
+  ARM_PASS: $(adminPass)
+
+trigger:
+- none
+
+pool:
+  name: pool-1
+
+steps:
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'quickstarts/microsoft.web/webapp-linux-managed-mysql/'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: '<your-resource-manager-connection>'
+    subscriptionId: '<your-subscription-id>'
+    action: 'DeleteRG'
+    resourceGroupName: 'ARMPipelinesLAMP-rg'
+    location: ''<your-closest-location>'
