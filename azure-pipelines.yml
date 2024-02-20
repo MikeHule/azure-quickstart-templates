@@ -16,7 +16,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Azure Sub - Resource Group 2'
+    azureResourceManagerConnection: 'Azure Sub - Resource Group 1'
     subscriptionId: 'ddcb21c8-6540-4cc3-a842-f20522b6f2f6'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'Resource_Group_2'
